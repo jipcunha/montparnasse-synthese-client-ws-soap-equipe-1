@@ -5,28 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Page accueil</title>
+<link rel="stylesheet" href="./css/Main.css" />
+<link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
 <body>
-<table>
-		<thead>
-		<tr>
-			<th>ID</th>
-			<th>Nom</th>
-			<th>Prenom</th>
-			<th>Age</th>
-		</tr>
-		</thead>
-		<tbody>
-		<c:forEach items="${personnes}" var="pers">
-		<tr>
-		<td>${pers.id}</td>
-		<td>${pers.nom}</td>
-		<td>${pers.prenom}</td>
-		<td>${pers.age}</td>
-		</tr>
-		</c:forEach>
-		</tbody>
-	</table>
+<div>
+		<nav class="container">
+			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 
+			<a href="/synthese-client-ws-soap-equipe-1/crudMagasin.jsp">CRUD Magasin</a>
+			<a href="/synthese-client-ws-soap-equipe-1/crudProdPerissable.jsp">CRUD Produit périssable</a> 
+			<a href="/synthese-client-ws-soap-equipe-1/crudProdNonPerissable.jsp">CRUD Produit non périssable</a> 
+			<a href="/synthese-client-ws-soap-equipe-1/methodeCalcul.jsp">Méthode Calcul</a>
+			<a href="/synthese-client-ws-soap-equipe-1/methodeAjouterProduitMagasin.jsp">Méthode Ajout ProduitMagasin</a>
+		</nav>
+</div>
+<div>
+<h2> Bienvenue dans l'index !!!</h2>
+</div>	
 </body>
 </html>
