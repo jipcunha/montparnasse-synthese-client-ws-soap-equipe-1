@@ -56,22 +56,14 @@ public class ServletMagasins extends HttpServlet {
 					service.modifierMagasin(id, nom, code, prix);
 				
 				}
-				else if (action.equals("ModifierMag")) {
-					Long id = Long.parseLong(request.getParameter("idMagasin"));
-					
-					
-				}
-					
-				else if (action.equals("SupprimerMag")) {
-					Long idMagasin = Long.parseLong(request.getParameter("idMagasin"));
-					
-					service.supprimerMagasin(idMagasin);
-				}
+				
 			}
 		} catch(Exception e) {
 			request.setAttribute("exception", e.getMessage());
 		}
 		
+		
+		request.setAttribute("magasins", service.getAllMagasins());
 		request.getRequestDispatcher("crudMagasin.jsp").forward(request, response);
 	}
 

@@ -45,12 +45,12 @@
 						required />
 				</div>
 				<div class="bar">
-					<button type="submit" class="btn btn-primary" action="modifier"
-						value="Modifier">Modifier</button>
+					<input type="submit" class="btn btn-primary" name="action"
+						value="Modifier">
 				</div>
 				<div class="bar">
-					<button type="submit" class="btn btn-primary" action="ajouter"
-						value="Ajouter">Ajouter</button>
+					<input type="submit" class="btn btn-primary" name="action"
+						value="Ajouter">
 				</div>
 			</form>
 		</div>
