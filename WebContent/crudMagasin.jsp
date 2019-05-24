@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
 <body >
+<div class="container">
 <div class="s1">
 		<nav class="container">
 			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 
@@ -85,6 +86,7 @@
 			</tbody>
 		</table>
 	</section>
+	</div>
 	</div>
 </body>
 </html>

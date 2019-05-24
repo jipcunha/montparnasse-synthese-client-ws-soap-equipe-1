@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
 <body>
+<div class="container">
 <div class="s1">
 <div>
 		<nav class="container">
@@ -20,6 +21,7 @@
 			<a href="/synthese-client-ws-soap-equipe-1/methodeCalcul.jsp">Méthode Calcul</a>
 			<a href="/synthese-client-ws-soap-equipe-1/methodeAjouterProduitMagasin.jsp">Méthode Ajout ProduitMagasin</a>
 		</nav>
+</div>
 </div>
 </div>
 </body>

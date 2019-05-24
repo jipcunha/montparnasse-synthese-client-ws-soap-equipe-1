@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
 <body>
+<div class="container">
 <div class="s1">
 <div>
 		<nav class="container">
@@ -101,6 +102,7 @@
 			</tbody>
 		</table>
 	</section>
+	</div>
 	</div>
 </body>
 </html>

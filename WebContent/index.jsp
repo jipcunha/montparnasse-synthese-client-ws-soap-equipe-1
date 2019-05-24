@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
 <body>
+<div class="container">
 <div class="s1">
 <div>
 		<nav class="container">
@@ -25,5 +26,6 @@
 <h2> Bienvenue dans l'index !!!</h2>
 </div>
 </div>	
+</div>
 </body>
 </html>
