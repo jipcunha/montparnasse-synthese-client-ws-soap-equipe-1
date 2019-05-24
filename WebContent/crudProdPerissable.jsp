@@ -25,7 +25,7 @@
 <section class="container">
 	<h1>CRUD PRODUIT PERISSABLE</h1>
 		<div>
-			<form action="ServletProduitPerissable">
+			<form action="ServletProduitsPerissables">
 
 				<div class="form-group row">
 					<input type="hidden" name="idProduit" value="${idProduit}" /> 

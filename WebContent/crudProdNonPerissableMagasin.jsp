@@ -20,12 +20,14 @@
 			<a href="/synthese-client-ws-soap-equipe-1/ServletProduitsNonPerissables">CRUD Produit non périssable</a> 
 			<a href="/synthese-client-ws-soap-equipe-1/ServletCalcul">Méthode Calcul</a>
 			<a href="/synthese-client-ws-soap-equipe-1/ServletAjoutProdMag">Méthode Ajout ProduitMagasin</a>
+			<a href="/synthese-client-ws-soap-equipe-1/ServletProduitsPerissablesMagasins">CRUD Produit Périssable Magasin</a>
+			<a href="/synthese-client-ws-soap-equipe-1/ServletProduitsNonPerissablesMagasins">CRUD Produit non périssable Magasin</a>
 		</nav>
 </div>
 <section class="container">
 	<h1>CRUD PRODUIT NON PERISSABLE</h1>
 		<div>
-			<form action="ServletProduitsNonPerissables">
+			<form action="ServletProduitsNonPerissablesMagasins">
 
 				<div class="form-group row">
 					<input type="hidden" name="idProduit" value="${idProduit}" /> 
@@ -52,10 +54,12 @@
 						placeholder="Entrer mode d'emploi" type="text" name="modeDemploi" value="${modeDemploi}"
 						required />
 				</div>
-				<div class="bar">
-					<button type="submit" class="btn btn-primary" name="modifier"
-						value="Modifier">Modifier</button>
-				</div>
+				<div class="form-group row">
+					<label for="idMagasin">ID Magasin</label> 
+					<input id="idMagasin" class="form-control"
+						placeholder="Entrer ID Magasin" type="number" name="idMagasin" value="${idMagasin}"
+						required />
+				</div>				
 				<div class="bar">
 					<button type="submit" class="btn btn-primary" name="ajouter"
 						value="Ajouter">Ajouter</button>
@@ -75,8 +79,7 @@
 					<td>Prix Produit</td>
 					<td>Date Limite</td>
 					<td>Mode D'emploi</td>
-					<td>Modifier</td>
-					<td>Supprimer</td>
+					<td>ID Magasin</td>		
 				</tr>
 			</thead>
 			<tbody>
@@ -89,9 +92,7 @@
 							<td><c:out value="${prod.prix}" /></td>
 							<td><c:out value="${prod.dateLimiteUtilisation}" /></td>
 							<td><c:out value="${prod.modeDemploi}" /></td>
-							<td><a href="ModifierProd?idProduit=${prod.idProduit}">Modifier</a></td>
-							<td><a href="SupprimerProd?idProduit=${prod.idProduit}">Supprimer</a></td>
-
+							<td><c:out value="${prod.magasin.idMagasin}" /></td>
 						</tr>
 					</c:forEach>
 				</c:if>
