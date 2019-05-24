@@ -1,6 +1,9 @@
 package com.infotel.servlet;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +37,43 @@ public class ServletProduitsPerissables extends HttpServlet {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
 		Produit[] produits = service.getAllProduits();
 		request.setAttribute("produits", produits);
+		
+//		try {
+//			String action = request.getParameter("action");
+//			if(action!=null) {
+//				
+//				if(action.equals("Ajouter")) {
+//					String nom = request.getParameter("nomProduit");
+//					int stock = Integer.parseInt(request.getParameter("stock"));
+//					double prix = Double.parseDouble(request.getParameter("prix"));
+//					Calendar date = new Calendar();
+//					
+//					service.ajouterProdPerissable(nom, stock, prix, date);;
+//				
+//				}
+//				else if (action.equals("Modifier")) {
+//					Long id = Long.parseLong(request.getParameter("idProduit"));
+//					String nom = request.getParameter("nomProduit");
+//					int stock = Integer.parseInt(request.getParameter("stock"));
+//					double prix = Double.parseDouble(request.getParameter("prix"));
+//					Date date = new Date();
+//					
+//					service.modifierProdPerissable(id, nom, stock, prix, date);
+//				
+//				}
+//				else if (action.equals("ModifierProd")) {
+//		
+//				}
+//					
+//				else if (action.equals("SupprimerProd")) {
+//		
+//				}
+			}
+		} catch(Exception e) {
+			request.setAttribute("exception", e.getMessage());
+		}
+		
+		
 		request.getRequestDispatcher("crudProdPerissable.jsp").forward(request, response);
 }
 

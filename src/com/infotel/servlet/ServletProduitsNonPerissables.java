@@ -35,6 +35,42 @@ public class ServletProduitsNonPerissables extends HttpServlet {
 		Produit[] produits = service.getAllProduits();
 		request.setAttribute("produits", produits);
 		
+		try {
+			String action = request.getParameter("action");
+			if(action!=null) {
+				
+				if(action.equals("Ajouter")) {
+					String nom = request.getParameter("nomProduit");
+					int stock = Integer.parseInt(request.getParameter("stock"));
+					double prix = Double.parseDouble(request.getParameter("prix"));
+					String mode = request.getParameter("modeDemploi");
+					
+					service.ajouterProdNonPerissable(nom, stock, prix, mode);
+				
+				}
+				else if (action.equals("Modifier")) {
+					Long id = Long.parseLong(request.getParameter("idProduit"));
+					String nom = request.getParameter("nomProduit");
+					int stock = Integer.parseInt(request.getParameter("stock"));
+					double prix = Double.parseDouble(request.getParameter("prix"));
+					String mode = request.getParameter("modeDemploi");
+					
+					service.modifierProdNonPerissable(id, nom, stock, prix, mode);
+				
+				}
+				else if (action.equals("ModifierProd")) {
+		
+				}
+					
+				else if (action.equals("SupprimerProd")) {
+		
+				}
+			}
+		} catch(Exception e) {
+			request.setAttribute("exception", e.getMessage());
+		}
+		
+		
 		request.getRequestDispatcher("crudProdNonPerissable.jsp").forward(request, response);
 }
 

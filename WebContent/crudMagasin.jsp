@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body >
+<body > 
 <div class="container">
 <div class="s1">
 		<nav class="container">
