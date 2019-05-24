@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body class="s1">
+<body >
+<div class="s1">
 		<nav class="container">
 			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 
 			<a href="/synthese-client-ws-soap-equipe-1/crudMagasin.jsp">CRUD Magasin</a>
@@ -84,5 +85,6 @@
 			</tbody>
 		</table>
 	</section>
+	</div>
 </body>
 </html>

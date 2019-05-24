@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.infotel.wsSoap.Personne;
-import com.infotel.wsSoap.PersonneSOAPService;
-import com.infotel.wsSoap.PersonneSOAPServiceProxy;
+import com.infotel.wsSoap.Produit;
+import com.infotel.wsSoap.ProduitSOAPService;
+import com.infotel.wsSoap.ProduitSOAPServiceProxy;
 
 /**
  * Servlet implementation class ServletPersonne
  */
-@WebServlet("/ServletPersonne")
+@WebServlet("/ServletProduitNonPerissable")
 public class ServletProduitsPerissables extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,10 +31,10 @@ public class ServletProduitsPerissables extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PersonneSOAPService service = new PersonneSOAPServiceProxy();
-		Personne[] personnes = service.getAllPersonnes();
-		request.setAttribute("personnes", personnes);
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		ProduitSOAPService service = new ProduitSOAPServiceProxy();
+		Produit[] produits = service.getAllProduits();
+		request.setAttribute("produits", produits);
+		request.getRequestDispatcher("crudProdPerissable.jsp").forward(request, response);
 }
 
 	/**

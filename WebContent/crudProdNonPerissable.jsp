@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body>
+<body >
+<div class="s1">
 <div>
 		<nav class="container">
 			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 
@@ -23,7 +24,7 @@
 <section class="container">
 	<h1>CRUD PRODUIT NON PERISSABLE</h1>
 		<div>
-			<form action="ServletProduits">
+			<form action="ServletProduitNonPerissable">
 
 				<div class="form-group row">
 					<input type="hidden" name="idProduit" value="${idProduit}" /> 
@@ -96,5 +97,6 @@
 			</tbody>
 		</table>
 	</section>
+	</div>
 </body>
 </html>

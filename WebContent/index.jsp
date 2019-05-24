@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body class="s1">
+<body>
+<div class="s1">
 <div>
 		<nav class="container">
 			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 
@@ -22,6 +23,7 @@
 </div>
 <div>
 <h2> Bienvenue dans l'index !!!</h2>
+</div>
 </div>	
 </body>
 </html>
