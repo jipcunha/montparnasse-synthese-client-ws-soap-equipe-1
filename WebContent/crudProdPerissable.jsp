@@ -84,8 +84,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:if test="${! empty produit}">
-					<c:forEach items="${produit}" var="prod">
+				<c:if test="${! empty produits}">
+					<c:forEach items="${produits}" var="prod">
 						<tr>
 							<td><c:out value="${prod.idProduit}" /></td>
 							<td><c:out value="${prod.nomProduit}" /></td>

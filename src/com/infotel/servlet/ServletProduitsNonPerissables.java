@@ -34,6 +34,7 @@ public class ServletProduitsNonPerissables extends HttpServlet {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
 		Produit[] produits = service.getAllProduits();
 		request.setAttribute("produits", produits);
+		
 		request.getRequestDispatcher("crudProdNonPerissable.jsp").forward(request, response);
 }
 
