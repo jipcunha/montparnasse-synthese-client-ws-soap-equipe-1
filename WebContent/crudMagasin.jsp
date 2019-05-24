@@ -69,7 +69,7 @@
 			</thead>
 			<tbody>
 				<c:if test="${! empty magasin}">
-					<c:forEach items="${magasin}" var="mag">
+					<c:forEach items="${magasins}" var="mag">
 						<tr>
 							<td><c:out value="${mag.idMagasin}" /></td>
 							<td><c:out value="${mag.nomMagasin}" /></td>

@@ -15,13 +15,13 @@ import com.infotel.wsSoap.PersonneSOAPServiceProxy;
  * Servlet implementation class ServletPersonne
  */
 @WebServlet("/ServletPersonne")
-public class ServletProduits extends HttpServlet {
+public class ServletProduitsNonPerissables extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletProduits() {
+    public ServletProduitsNonPerissables() {
         super();
         // TODO Auto-generated constructor stub
     }

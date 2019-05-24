@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.infotel.wsSoap.Magasin;
+import com.infotel.wsSoap.ProduitSOAPService;
+import com.infotel.wsSoap.ProduitSOAPServiceProxy;
+
+
 /**
  * Servlet implementation class ServletPersonne
  */
@@ -26,8 +31,43 @@ public class ServletMagasins extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ProduitSOAPService service = new ProduitSOAPServiceProxy();
+		Magasin[] magasins = service.getAllMagasins();
+		request.setAttribute("magasins", magasins);
+		
+//		try {
+//			String action = request.getParameter("action");
+//			if(action!=null) {
+//				if(action.equals("Consulter")) {
+//					Long code = Long.parseLong(request.getParameter("code"));
+//					request.setAttribute("code", code);
+//					Compte cp = service.consulterCompte(code);
+//					request.setAttribute("compte", cp);
+//				}
+//				else if (action.equals("Tous les comptes")) {
+//					request.setAttribute("comptes", service.consulterComptes());
+//				}
+//				else if (action.equals("Verser")||action.equals("Retirer")) {
+//					
+//					double montant = Double.parseDouble(request.getParameter("montant"));
+//					Long code = Long.parseLong(request.getParameter("code"));
+//					
+//					request.setAttribute("montant",  montant);
+//					request.setAttribute("code",  code);
+//					if(action.equals("Verser")) {
+//						service.verser(code, montant);
+//					}
+//					else {
+//						service.retirer(code, montant);
+//					}
+//					request.setAttribute("compte", service.consulterCompte(code));
+//				}
+//			}
+//		} catch(Exception e) {
+//			request.setAttribute("exception", e.getMessage());
+//		}
+		
+		request.getRequestDispatcher("crudMagasin.jsp").forward(request, response);
 	}
 
 	/**

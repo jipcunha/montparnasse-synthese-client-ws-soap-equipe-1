@@ -23,7 +23,7 @@
 <section class="container">
 	<h1>METHODE CALCUL</h1>
 		<div>
-			<form action="ServletCalcul">
+			<form action="ServletMagasins">
 					<label for="idMagasin">ID Magasin</label>
 					<input id="idMagasin" class="form-control" 
 						placeholder="Entrer l'ID du magasin" type="number" name="idMagasin" value="${idMagasin}" 
