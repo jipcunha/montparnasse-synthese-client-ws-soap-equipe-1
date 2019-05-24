@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body>
+<body class="s1">
 <div>
 		<nav class="container">
 			<a href="/synthese-client-ws-soap-equipe-1">Accueil</a> 

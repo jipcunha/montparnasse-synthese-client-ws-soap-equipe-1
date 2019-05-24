@@ -15,7 +15,7 @@ import com.infotel.wsSoap.ProduitSOAPServiceProxy;
 /**
  * Servlet implementation class ServletPersonne
  */
-@WebServlet("/ServletPersonne")
+@WebServlet("/ServletMagasins")
 public class ServletMagasins extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
