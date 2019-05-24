@@ -68,10 +68,10 @@ public class ServletProduitsPerissables extends HttpServlet {
 //				else if (action.equals("SupprimerProd")) {
 //		
 //				}
-			}
-		} catch(Exception e) {
-			request.setAttribute("exception", e.getMessage());
-		}
+//			}
+//		} catch(Exception e) {
+//			request.setAttribute("exception", e.getMessage());
+//		}
 		
 		
 		request.getRequestDispatcher("crudProdPerissable.jsp").forward(request, response);
