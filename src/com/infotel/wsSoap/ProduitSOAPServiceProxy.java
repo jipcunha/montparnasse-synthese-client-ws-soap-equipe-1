@@ -68,16 +68,16 @@ public class ProduitSOAPServiceProxy implements com.infotel.wsSoap.ProduitSOAPSe
     produitSOAPService.ajouterProduitPerissableMagasin(nom, stock, prix, date, idMagasin);
   }
   
-  public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode) throws java.rmi.RemoteException{
+  public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode, java.lang.Long idM) throws java.rmi.RemoteException{
     if (produitSOAPService == null)
       _initProduitSOAPServiceProxy();
-    return produitSOAPService.modifierProdNonPerissable(id, nom, stock, prix, mode);
+    return produitSOAPService.modifierProdNonPerissable(id, nom, stock, prix, mode, idM);
   }
   
-  public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date) throws java.rmi.RemoteException{
+  public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idM) throws java.rmi.RemoteException{
     if (produitSOAPService == null)
       _initProduitSOAPServiceProxy();
-    return produitSOAPService.modifierProdPerissable(id, nom, stock, prix, date);
+    return produitSOAPService.modifierProdPerissable(id, nom, stock, prix, date, idM);
   }
   
   public com.infotel.wsSoap.Produit getProduit(long idProduit) throws java.rmi.RemoteException{

@@ -12,8 +12,8 @@ public interface ProduitSOAPService extends java.rmi.Remote {
     public double calculPrixMagasin(java.lang.Long idMagasin) throws java.rmi.RemoteException;
     public com.infotel.wsSoap.Magasin getMagasin(long idMagasin) throws java.rmi.RemoteException;
     public void ajouterProduitPerissableMagasin(java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idMagasin) throws java.rmi.RemoteException;
-    public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode) throws java.rmi.RemoteException;
-    public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date) throws java.rmi.RemoteException;
+    public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode, java.lang.Long idM) throws java.rmi.RemoteException;
+    public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idM) throws java.rmi.RemoteException;
     public com.infotel.wsSoap.Produit getProduit(long idProduit) throws java.rmi.RemoteException;
     public com.infotel.wsSoap.Magasin[] getAllMagasins() throws java.rmi.RemoteException;
     public com.infotel.wsSoap.Produit[] getAllProduits() throws java.rmi.RemoteException;

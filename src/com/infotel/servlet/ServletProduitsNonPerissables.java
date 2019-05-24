@@ -54,8 +54,9 @@ public class ServletProduitsNonPerissables extends HttpServlet {
 					int stock = Integer.parseInt(request.getParameter("stock"));
 					double prix = Double.parseDouble(request.getParameter("prix"));
 					String mode = request.getParameter("modeDemploi");
-					
-					service.modifierProdNonPerissable(id, nom, stock, prix, mode);
+					Long idMagasin = Long.parseLong(request.getParameter("idMagasin"));
+
+					service.modifierProdNonPerissable(id, nom, stock, prix, mode, idMagasin);
 				
 				}
 				else if (action.equals("ModifierProd")) {

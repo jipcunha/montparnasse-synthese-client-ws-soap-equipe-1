@@ -99,6 +99,9 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "mode"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idM"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), java.lang.Long.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
         oper.setReturnClass(com.infotel.wsSoap.Produit.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
@@ -119,6 +122,9 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "prix"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), double.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "date"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idM"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), java.lang.Long.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
@@ -497,7 +503,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
-    public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode) throws java.rmi.RemoteException {
+    public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode, java.lang.Long idM) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -513,7 +519,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {id, nom, new java.lang.Integer(stock), new java.lang.Double(prix), mode});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {id, nom, new java.lang.Integer(stock), new java.lang.Double(prix), mode, idM});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -531,7 +537,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
-    public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date) throws java.rmi.RemoteException {
+    public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idM) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -547,7 +553,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {id, nom, new java.lang.Integer(stock), new java.lang.Double(prix), date});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {id, nom, new java.lang.Integer(stock), new java.lang.Double(prix), date, idM});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
