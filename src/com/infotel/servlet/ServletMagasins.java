@@ -57,11 +57,15 @@ public class ServletMagasins extends HttpServlet {
 				
 				}
 				else if (action.equals("ModifierMag")) {
-		
+					Long id = Long.parseLong(request.getParameter("idMagasin"));
+					
+					
 				}
 					
 				else if (action.equals("SupprimerMag")) {
-		
+					Long idMagasin = Long.parseLong(request.getParameter("idMagasin"));
+					
+					service.supprimerMagasin(idMagasin);
 				}
 			}
 		} catch(Exception e) {
