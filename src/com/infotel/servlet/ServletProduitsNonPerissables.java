@@ -1,21 +1,26 @@
 package com.infotel.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.infotel.wsSoap.GetMagasin;
 import com.infotel.wsSoap.Magasin;
 import com.infotel.wsSoap.Produit;
+import com.infotel.wsSoap.ProduitNonPerissable;
 import com.infotel.wsSoap.ProduitSOAPService;
 import com.infotel.wsSoap.ProduitSOAPServiceProxy;
 
 /**
  * Servlet implementation class ServletPersonne
  */
-@WebServlet("/ServletProduitNonPerissable")
+@WebServlet("/ServletProduitsNonPerissables")
 public class ServletProduitsNonPerissables extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,48 +35,57 @@ public class ServletProduitsNonPerissables extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProduitSOAPService service = new ProduitSOAPServiceProxy();
-		Produit[] produits = service.getAllProduits();
+		ProduitNonPerissable[] produits = service.getAllProduitsNP();
 		request.setAttribute("produits", produits);
+		Magasin[] magasins = service.getAllMagasins();
+		request.setAttribute("magasins", magasins);
 		
-		try {
-			String action = request.getParameter("action");
-			if(action!=null) {
+		
+		
+		String action = request.getParameter("action");
+			
+		if(action!=null) {
 				
 				if(action.equals("Ajouter")) {
-					String nom = request.getParameter("nomProduit");
+					String nomProduit = request.getParameter("nomProduit");
 					int stock = Integer.parseInt(request.getParameter("stock"));
 					double prix = Double.parseDouble(request.getParameter("prix"));
 					String mode = request.getParameter("modeDemploi");
 					
-					service.ajouterProdNonPerissable(nom, stock, prix, mode);
+					
+					service.ajouterProdNonPerissable(nomProduit, stock, prix, mode);
 				
 				}
 				else if (action.equals("Modifier")) {
+					
+					if (request.getParameter("idProduit") != null) {
 					Long id = Long.parseLong(request.getParameter("idProduit"));
-					String nom = request.getParameter("nomProduit");
+					
+					ProduitNonPerissable pnp = service.getProduitNP(id);
+
+					String nomProduit = request.getParameter("nomProduit");
 					int stock = Integer.parseInt(request.getParameter("stock"));
 					double prix = Double.parseDouble(request.getParameter("prix"));
 					String mode = request.getParameter("modeDemploi");
 					Long idMagasin = Long.parseLong(request.getParameter("idMagasin"));
-
-					service.modifierProdNonPerissable(id, nom, stock, prix, mode, idMagasin);
-				
-				}
-				else if (action.equals("ModifierProd")) {
-		
-				}
 					
-				else if (action.equals("SupprimerProd")) {
-		
+					pnp.setIdProduit(id);
+					pnp.setNomProduit(nomProduit);
+					pnp.setStock(stock);
+					pnp.setPrix(prix);
+					pnp.setModeDemploi(mode);
+					
+					service.modifierProdNonPerissable(id, nomProduit, stock, prix, mode, idMagasin);
+					}
 				}
+			
 			}
-		} catch(Exception e) {
-			request.setAttribute("exception", e.getMessage());
-		}
-		
-		
+				
+		request.setAttribute("magasins", service.getAllMagasins());
+		request.setAttribute("produits", service.getAllProduitsNP());
 		request.getRequestDispatcher("crudProdNonPerissable.jsp").forward(request, response);
 }
 

@@ -71,18 +71,18 @@ footer{
 }
 
 #s2{
-    background-color: aquamarine;
+    background-color: #c40062;
 }
 
 
 #s6{
-    background-color: plum;  
+    background-color: #c40000;  
 }
 
 #s7{
-    background-color: turquoise;
-    border-bottom: 3px solid rebeccapurple;
-    border-top: 3px solid rebeccapurple; 
+    background-color: pink;
+    border-bottom: 3px solid #e28fde;
+    border-top: 3px solid #e28fde; 
 }
 
 #form-contact div{
@@ -114,10 +114,10 @@ footer{
 }
 
 .title1{
-    text-align: left;
-    font-family: cursive;
+	text-align: center;
+    font-family: serif;
     font-size: 15px;
-    color: blue;
+    color: #800040;
 }
 
 .table{

@@ -18,7 +18,7 @@
 			<a href="/synthese-client-ws-soap-equipe-1/ServletProduitsPerissables">CRUD Produit périssable</a> 
 			<a href="/synthese-client-ws-soap-equipe-1/ServletProduitsNonPerissables">CRUD Produit non périssable</a> 
 			<a href="/synthese-client-ws-soap-equipe-1/ServletCalcul">Méthode Calcul</a>
-			<a href="/synthese-client-ws-soap-equipe-1/ServletAjoutProdMag">Méthode Ajout ProduitMagasin</a>
+			<a href="/synthese-client-ws-soap-equipe-1/ajouterProdMag.jsp">Méthode Ajout ProduitMagasin</a>
 		</nav>
 	
 	<section class="container">

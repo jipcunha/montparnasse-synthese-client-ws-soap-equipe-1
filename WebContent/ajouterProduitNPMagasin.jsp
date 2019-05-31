@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>CRUD PRODUIT NON PERISSABLE</title>
+<meta charset="UTF-8">
+<title>Methode Ajouter Produit Magasin</title>
 <link rel="stylesheet" href="./css/Main.css" />
 <link rel="stylesheet" href="./css/Bootstrap.css" />
 </head>
-<body>
-	<div class="container">
+<body>	<div class="container">
 		<div class="s1">
 			<div>
 				<nav class="container">
@@ -18,19 +17,19 @@
 						href="/synthese-client-ws-soap-equipe-1/ServletMagasins">CRUD
 						Magasin</a> <a
 						href="/synthese-client-ws-soap-equipe-1/ServletProduitsPerissables">CRUD
-						Produit périssable</a> <a
+						Produit pÃ©rissable</a> <a
 						href="/synthese-client-ws-soap-equipe-1/ServletProduitsNonPerissables">CRUD
-						Produit non périssable</a> <a
-						href="/synthese-client-ws-soap-equipe-1/ServletCalcul">Méthode
+						Produit non pÃ©rissable</a> <a
+						href="/synthese-client-ws-soap-equipe-1/ServletCalcul">MÃ©thode
 						Calcul</a> <a
-						href="/synthese-client-ws-soap-equipe-1/ajouterProdMag.jsp">Méthode
-						Ajout ProduitMagasin</a>
+						href="/synthese-client-ws-soap-equipe-1/ajouterProdMag.jsp">
+						Ajout Produit Ã  Magasin</a>
 				</nav>
 			</div>
 			<section class="container">
-				<h1>CRUD PRODUIT NON PERISSABLE</h1>
+				<h1>AJOUT PRODUIT NON PERISSABLE MAGASIN</h1>
 				<div>
-					<form action="ServletProduitsNonPerissables">
+					<form action="ServletProduitsNonPerissablesMagasins">
 
 						<div class="form-group row">
 							<input type="hidden" name="idProduit" value="${idProduit}" /> <label
@@ -55,6 +54,8 @@
 								name="modeDemploi" value="${modeDemploi}" required />
 						</div>
 
+				
+
 						<div class="form-group row">
 							<label for="idMagasin">Id du Magasin</label> <select
 								name="idMagasin">
@@ -70,10 +71,7 @@
 								</optgroup>
 							</select>
 						</div>
-						<div class="bar">
-							<input type="submit" class="btn btn-primary" name="action"
-								value="Modifier">
-						</div>
+					
 						<div class="bar">
 							<input type="submit" class="btn btn-primary" name="action"
 								value="Ajouter">
@@ -93,8 +91,7 @@
 							<td>Prix Produit</td>
 							<td>Mode D'emploi</td>
 							<td>Id Magasin</td>
-							<td>Modifier</td>
-							<td>Supprimer</td>
+
 						</tr>
 					</thead>
 					<tbody>
@@ -107,8 +104,7 @@
 									<td><c:out value="${prod.prix}" /></td>
 									<td><c:out value="${prod.modeDemploi}" /></td>
 									<td><c:out value="${prod.magasin.idMagasin}" /></td>
-									<td><a href="ModifierProdNP?idProduit=${prod.idProduit}">Modifier</a></td>
-									<td><a href="SupprimerProd?idProduit=${prod.idProduit}">Supprimer</a></td>
+
 								</tr>
 							</c:forEach>
 						</c:if>

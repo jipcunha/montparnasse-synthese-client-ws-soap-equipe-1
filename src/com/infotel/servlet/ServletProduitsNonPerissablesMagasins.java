@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.infotel.wsSoap.Magasin;
+import com.infotel.wsSoap.ProduitNonPerissable;
+import com.infotel.wsSoap.ProduitSOAPService;
+import com.infotel.wsSoap.ProduitSOAPServiceProxy;
+
 /**
  * Servlet implementation class ServletProduitsNonPerissablesMagasins
  */
@@ -26,8 +31,35 @@ public class ServletProduitsNonPerissablesMagasins extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		ProduitSOAPService service = new ProduitSOAPServiceProxy();
+		ProduitNonPerissable[] produits = service.getAllProduitsNP();
+		request.setAttribute("produits", produits);
+		Magasin[] magasins = service.getAllMagasins();
+		request.setAttribute("magasins", magasins);
+		
+		
+		
+		String action = request.getParameter("action");
+			
+		if(action!=null) {
+				
+				if(action.equals("Ajouter")) {
+
+					
+					String nom = request.getParameter("nomProduit");
+					int stock = Integer.parseInt(request.getParameter("stock"));
+					double prix = Double.parseDouble(request.getParameter("prix"));
+					String mode = request.getParameter("modeDemploi");
+					Long idMagasin = Long.parseLong(request.getParameter("idMagasin"));
+
+					service.ajouterProduitNonPerissableMagasin(nom, stock, prix, mode, idMagasin);
+				}
+		}
+		
+		request.setAttribute("magasins", service.getAllMagasins());
+		request.setAttribute("produits", service.getAllProduitsNP());
+		request.getRequestDispatcher("ajouterProduitNPMagasin.jsp").forward(request, response);
 	}
 
 	/**

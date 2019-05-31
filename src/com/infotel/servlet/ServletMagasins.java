@@ -35,6 +35,7 @@ public class ServletMagasins extends HttpServlet {
 		Magasin[] magasins = service.getAllMagasins();
 		request.setAttribute("magasins", magasins);
 		
+
 		try {
 			String action = request.getParameter("action");
 			if(action!=null) {

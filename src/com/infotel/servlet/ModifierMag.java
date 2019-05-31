@@ -44,6 +44,7 @@ public class ModifierMag extends HttpServlet {
 		request.setAttribute("prixDuLocal", m.getPrixDuLocal());
 		request.setAttribute("codeMagasin", m.getCodeMagasin());
 
+		
 		request.setAttribute("magasins", service.getAllMagasins());
 		request.getRequestDispatcher("crudMagasin.jsp").forward(request, response);
 	}

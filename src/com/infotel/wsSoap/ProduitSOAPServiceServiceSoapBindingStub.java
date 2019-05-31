@@ -16,7 +16,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[15];
+        _operations = new org.apache.axis.description.OperationDesc[19];
         _initOperationDesc1();
         _initOperationDesc2();
     }
@@ -54,6 +54,15 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAllProduitsP");
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitPerissable[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getMagasin");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idMagasin"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
@@ -62,7 +71,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ajouterProduitPerissableMagasin");
@@ -82,7 +91,16 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
+        _operations[4] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAllProduitsNP");
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitNonPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitNonPerissable[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("modifierProdNonPerissable");
@@ -102,12 +120,12 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idM"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), java.lang.Long.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
-        oper.setReturnClass(com.infotel.wsSoap.Produit.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitNonPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitNonPerissable.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[4] = oper;
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("modifierProdPerissable");
@@ -127,12 +145,12 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idM"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), java.lang.Long.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
-        oper.setReturnClass(com.infotel.wsSoap.Produit.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitPerissable.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[5] = oper;
+        _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getProduit");
@@ -143,31 +161,13 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[6] = oper;
+        _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllMagasins");
         oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "magasin"));
         oper.setReturnClass(com.infotel.wsSoap.Magasin[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[7] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("getAllProduits");
-        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
-        oper.setReturnClass(com.infotel.wsSoap.Produit[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[8] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("supprimerProduit");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idProduit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[9] = oper;
@@ -178,13 +178,42 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getAllProduits");
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produit"));
+        oper.setReturnClass(com.infotel.wsSoap.Produit[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[10] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getProduitNP");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idProduit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitNonPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitNonPerissable.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[11] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("supprimerProduit");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idProduit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[12] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("supprimerMagasin");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idMagasin"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[10] = oper;
+        _operations[13] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("modifierMagasin");
@@ -203,7 +232,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[11] = oper;
+        _operations[14] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ajouterProdNonPerissable");
@@ -220,7 +249,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[12] = oper;
+        _operations[15] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ajouterProduitNonPerissableMagasin");
@@ -240,7 +269,18 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[13] = oper;
+        _operations[16] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getProduitP");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "idProduit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "produitPerissable"));
+        oper.setReturnClass(com.infotel.wsSoap.ProduitPerissable.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[17] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ajouterMagasin");
@@ -254,7 +294,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[14] = oper;
+        _operations[18] = oper;
 
     }
 
@@ -442,12 +482,46 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
-    public com.infotel.wsSoap.Magasin getMagasin(long idMagasin) throws java.rmi.RemoteException {
+    public com.infotel.wsSoap.ProduitPerissable[] getAllProduitsP() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "getAllProduitsP"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.infotel.wsSoap.ProduitPerissable[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.infotel.wsSoap.ProduitPerissable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitPerissable[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public com.infotel.wsSoap.Magasin getMagasin(long idMagasin) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -481,7 +555,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -503,12 +577,46 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
-    public com.infotel.wsSoap.Produit modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode, java.lang.Long idM) throws java.rmi.RemoteException {
+    public com.infotel.wsSoap.ProduitNonPerissable[] getAllProduitsNP() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[5]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "getAllProduitsNP"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.infotel.wsSoap.ProduitNonPerissable[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.infotel.wsSoap.ProduitNonPerissable[]) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitNonPerissable[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public com.infotel.wsSoap.ProduitNonPerissable modifierProdNonPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.lang.String mode, java.lang.Long idM) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -527,9 +635,9 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         else {
             extractAttachments(_call);
             try {
-                return (com.infotel.wsSoap.Produit) _resp;
+                return (com.infotel.wsSoap.ProduitNonPerissable) _resp;
             } catch (java.lang.Exception _exception) {
-                return (com.infotel.wsSoap.Produit) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.Produit.class);
+                return (com.infotel.wsSoap.ProduitNonPerissable) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitNonPerissable.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -537,12 +645,12 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
-    public com.infotel.wsSoap.Produit modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idM) throws java.rmi.RemoteException {
+    public com.infotel.wsSoap.ProduitPerissable modifierProdPerissable(java.lang.Long id, java.lang.String nom, int stock, double prix, java.util.Calendar date, java.lang.Long idM) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -561,9 +669,9 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
         else {
             extractAttachments(_call);
             try {
-                return (com.infotel.wsSoap.Produit) _resp;
+                return (com.infotel.wsSoap.ProduitPerissable) _resp;
             } catch (java.lang.Exception _exception) {
-                return (com.infotel.wsSoap.Produit) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.Produit.class);
+                return (com.infotel.wsSoap.ProduitPerissable) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitPerissable.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -576,7 +684,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
+        _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -610,7 +718,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
+        _call.setOperation(_operations[9]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -644,7 +752,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
+        _call.setOperation(_operations[10]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -673,12 +781,46 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
+    public com.infotel.wsSoap.ProduitNonPerissable getProduitNP(long idProduit) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[11]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "getProduitNP"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(idProduit)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.infotel.wsSoap.ProduitNonPerissable) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.infotel.wsSoap.ProduitNonPerissable) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitNonPerissable.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public void supprimerProduit(long idProduit) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[9]);
+        _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -705,7 +847,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[10]);
+        _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -732,7 +874,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[11]);
+        _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -766,7 +908,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[12]);
+        _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -793,7 +935,7 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[13]);
+        _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -815,12 +957,46 @@ public class ProduitSOAPServiceServiceSoapBindingStub extends org.apache.axis.cl
 }
     }
 
+    public com.infotel.wsSoap.ProduitPerissable getProduitP(long idProduit) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[17]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://wsSoap.infotel.com/", "getProduitP"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Long(idProduit)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (com.infotel.wsSoap.ProduitPerissable) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (com.infotel.wsSoap.ProduitPerissable) org.apache.axis.utils.JavaUtils.convert(_resp, com.infotel.wsSoap.ProduitPerissable.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public void ajouterMagasin(java.lang.String nom, int code, double prix) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[14]);
+        _call.setOperation(_operations[18]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
